@@ -1,23 +1,24 @@
 import React from 'react';
-import { mockUserData, mockActivityData } from '../data/mockData';
+import { mockActivityData } from '../data/mockData';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
 
 const UserDashboard: React.FC = () => {
+  const user = useSelector((state: RootState) => state.user);
   return (
     <div className="container mt-5">
       <div className="row">
-        {/* User Info Card */}
         <div className="col-md-4">
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">User Info</h5>
-              <p className="card-text"><strong>Name:</strong> {mockUserData.name}</p>
-              <p className="card-text"><strong>Email:</strong> {mockUserData.email}</p>
-              <p className="card-text"><strong>Role:</strong> {mockUserData.role}</p>
-              <p className="card-text"><strong>Last Login:</strong> {mockUserData.lastLogin}</p>
+              <p className="card-text"><strong>Name:</strong> {user.name}</p>
+              <p className="card-text"><strong>Email:</strong>  {user.name}@gmail.com</p>
+              <p className="card-text"><strong>Role:</strong> {user.role}</p>
+              <p className="card-text"><strong>Last Login:</strong> '2024-08-01 10:00 AM'</p>
             </div>
           </div>
         </div>
-        {/* Activity Log Table */}
         <div className="col-md-8">
           <div className="card">
             <div className="card-body">
