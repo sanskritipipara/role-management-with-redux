@@ -17,8 +17,8 @@ const UserFetcher: React.FC = () => {
   };
 
   return (
-    <button onClick={fetchUser}>
-      Login
+    <button type="button" className="btn btn-outline-primary w-100"  onClick={fetchUser}>
+      Click here to login
     </button>
   );
 };
